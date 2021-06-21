@@ -1,0 +1,55 @@
+{
+    "name": "@pliancy/chargebee-sdk",
+    "description": "SDK wrapper for the Chargebee TypeScript library",
+    "version": "0.0.0",
+    "homepage": "https://github.com/pliancy/chargebee-sdk",
+    "main": "src/index.ts",
+    "scripts": {
+        "build": "run-s -l clean compile copy",
+        "clean": "rimraf dist coverage",
+        "compile": "tsc",
+        "cov.view": "open-cli coverage/lcov-report/index.html",
+        "copy": "run-p -l copyPackage copyReadme",
+        "copyPackage": "cpy 'package.json' 'dist'",
+        "copyReadme": "cpy 'README.md' 'dist'",
+        "lint": "eslint \"./**/*.{ts,js,json,yml}\" --fix",
+        "postinstall": "[ -d '.husky' ] && husky install || true",
+        "test": "jest",
+        "test.cov": "jest --coverage",
+        "test.watch": "jest --watch"
+    },
+    "keywords": [],
+    "author": {
+        "name": "Justin",
+        "email": "justin.mcmahon@pliancy.com"
+    },
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pliancy/chargebee-sdk"
+    },
+    "engines": {
+        "node": ">= 14.15"
+    },
+    "dependencies": {
+        "chargebee-typescript": "^2.0.9",
+        "tslib": "^2.0.3"
+    },
+    "devDependencies": {
+        "@pliancy/eslint-config-ts": "^0.0.5",
+        "@types/jest": "^26.0.23",
+        "@types/node": "^15.6.1",
+        "cpy-cli": "^3.1.1",
+        "husky": "^6.0.0",
+        "jest": "^26.6.3",
+        "npm-run-all": "^4.1.5",
+        "open-cli": "^6.0.1",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^26.5.6",
+        "typescript": "^4.2.4"
+    },
+    "volta": {
+        "node": "14.17.0",
+        "yarn": "1.22.10"
+    }
+}
