@@ -1,5 +1,12 @@
 # SDK wrapper for the Chargebee TypeScript SDK
 
+## Why
+
+The [chargebee-typescript](https://github.com/chargebee/chargebee-typescript) library is a bit
+unwieldy and exports its types from various places within the codebase. This wrapper exports its
+types from the root of the project and converts Chargebee methods that return a `request` to 
+simple promises.
+
 ## Currently Supported
 - Customers
     - `getCustomerById`
