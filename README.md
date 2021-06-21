@@ -23,10 +23,10 @@ npm install @pliancy/chargebee-sdk
 
 ```typescript
 // environment defaults to dev. Pass 'prod' as the second argument for producton
-import { Customer } from '@pliancy/chargebee-sdk'
+import { Invoice } from '@pliancy/chargebee-sdk'
 
-const api = new PliancyApi('myApiKey')
-const customers: Customer[] = await api.getCustomers()
+const chargebee = new ChargeBee({ site: 'mySite', api_key: 'myApiKey' })
+const invoice: Invoice = await chargebee.getInvoiceById(1)
 ```
 
 ## Test
