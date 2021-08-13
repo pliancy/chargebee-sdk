@@ -66,11 +66,11 @@ export class ChargeBee extends CChargeBee {
 
     async updateSubscription(
         subscriptionId: string,
-        updates: Partial<Subscription> & { end_of_term?: boolean; replace_addon_list?: boolean },
+        updates: Partial<Subscription> & { end_of_term?: boolean; replace_items_list?: boolean },
     ): Promise<Subscription> {
         return new Promise((resolve, reject) => {
             this.subscription
-                .update(subscriptionId, updates)
+                .update_for_items(subscriptionId, updates)
                 .request((error: any, result: Result) => {
                     if (error) return reject(error)
                     return resolve(result.subscription)

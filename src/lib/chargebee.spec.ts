@@ -77,7 +77,7 @@ describe('ChargeBee', () => {
 
     it('fails to update a subscription', async () => {
         const error = new Error('No dice')
-        jest.spyOn(chargebee.subscription, 'update').mockReturnValue({
+        jest.spyOn(chargebee.subscription, 'update_for_items').mockReturnValue({
             request: (cb: Function) => cb(error, null),
         } as never)
         await expect(chargebee.updateSubscription('subscriptionId', {})).rejects.toEqual(error)
@@ -85,11 +85,11 @@ describe('ChargeBee', () => {
 
     it('updates a subscription', async () => {
         const subscription = { subscription: { id: 'SUB_ID' } }
-        jest.spyOn(chargebee.subscription, 'update').mockReturnValue({
+        jest.spyOn(chargebee.subscription, 'update_for_items').mockReturnValue({
             request: (cb: Function) => cb(null, { list: [{ subscription }] }),
         } as never)
         await expect(chargebee.updateSubscription('subscriptionId', {})).resolves
-        expect(chargebee.subscription.update).toHaveBeenCalledWith('subscriptionId', {})
+        expect(chargebee.subscription.update_for_items).toHaveBeenCalledWith('subscriptionId', {})
     })
 
     it('fails to get an invoice', async () => {
