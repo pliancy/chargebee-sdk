@@ -1,7 +1,7 @@
 {
     "name": "@pliancy/chargebee-sdk",
     "description": "SDK wrapper for the Chargebee TypeScript library",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "homepage": "https://github.com/pliancy/chargebee-sdk",
     "main": "src/index.ts",
     "scripts": {
