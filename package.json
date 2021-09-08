@@ -36,7 +36,7 @@
         "tslib": "^2.0.3"
     },
     "devDependencies": {
-        "@pliancy/eslint-config-ts": "^0.0.5",
+        "@pliancy/eslint-config-ts": "0.0.5",
         "@types/jest": "26.0.23",
         "@types/node": "15.12.3",
         "cpy-cli": "3.1.1",
